@@ -5,6 +5,12 @@ terraform {
       version = "4.24.0"
     }
   }
+  backend "azurerm" {
+    resource_group_name = "StorageRG"
+    storage_account_name = "tbaccountniki"
+    container_name = "tbcontainerniki"
+    key = "terraform.tfstate"
+  }
 }
 provider "azurerm" {
   features {
